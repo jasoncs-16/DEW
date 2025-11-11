@@ -1,0 +1,115 @@
+body {
+    font-family: Arial;
+    padding-left: 30px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+#carpetaRaiz {
+    display: flex;
+    font-size: 30px;
+    flex-direction: row;   
+}
+
+#carpetaRaiz p {
+    margin-top: 20px;
+}
+
+#carpeta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#carpeta p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0px 5px 0px 5px;
+    width: fit-content;
+}
+#botonAnhadir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 12px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(41, 180, 95);
+    color: white;
+    cursor: pointer;
+}
+
+#botonAnhadir:hover {
+    background-color: rgb(26, 114, 60);
+}
+
+#botonBorrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 12px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding-top: 0px;
+}
+
+#botonBorrar:hover {
+    background-color: rgb(201, 0, 0);
+}
+
+img {
+    width: 60px;
+    height: 60px;
+
+}
+
+#nuevoDiv {
+    display: flex;
+    width: 370px;
+    justify-content: space-around;
+}
+
+#nuevoDiv button{
+    cursor: pointer;
+}
+
+#nuevoDirectorio {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+#subDirectorioCarpeta, #subDirectorioTxt {
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#subDirectorioCarpeta p, #subDirectorioTxt p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#subDirectorioTxt { 
+    width: 120px;
+}
