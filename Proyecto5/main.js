@@ -4,37 +4,20 @@ const formUsuario = document.querySelector("#formUsuario").addEventListener("sub
     e.preventDefault();
 });
 
-class usuario {
-    constructor(nombre, apellidos, dni, fecNac, codPostal, email, telFijo, telMovil, iban, tarjetaCredito, contrasenha, repetirCon) {
-        this.nombre = /^[A-Z][a-z]+$/
-        this.apellidos = /^[A-Z][a-z]+\s[A-Z][a-z]+$/
-        this.dni = /^[0-9]{8}[A-Z]$/
-        this.fecNac = /^((1|2)[0-9]|3[0-1])\/(0[0-9]|1[0-2])\/[0-9]{4}$/
-        this.codPostal = /^[0-9]{5}$/
-        this.email = /^[a-zA-Z]*[0-9]*@(gmail|hotmail)(.com|.es)$/
-        this.telFijo = /^[0-9]{9}$/
-        this.telMovil = /^[0-9]{9}$/
-        this.iban = /^ES[0-9]{2}\s[0-9]{4}\s[0-9]{4}\s[0-9]{2}\s[0-9]{10}$/
-        this.tarjetaCredito = /^[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}$/
-        this.contrasenha = /^([a-zA-Z]|[0-9]|\W){12}$/
-    }
-};
-
-// LISTA DE VALORES 
-const listaValores = [
-    "nombre",
-    "apellidos",
-    "dni",
-    "fecNac",
-    "codPostal",
-    "email",
-    "telFijo",
-    "telMovil",
-    "iban",
-    "tarjetaCredito",
-    "contrasenha",
-    "repetirCon"
-];
+// OBJETO VALIDADORES
+const validadores = {
+    nombre: /^[A-Z][a-z]+$/,
+    apellidos: /^[A-Z][a-z]+\s[A-Z][a-z]+$/,
+    dni: /^[0-9]{8}[A-Z]$/,
+    fecNac: /^((1|2)[0-9]|3[0-1])\/(0[0-9]|1[0-2])\/[0-9]{4}$/,
+    codPostal: /^[0-9]{5}$/,
+    email: /^[a-zA-Z]*[0-9]*@(gmail|hotmail)(.com|.es)$/,
+    telFijo: /^[0-9]{9}$/,
+    telMovil: /^[0-9]{9}$/,
+    iban: /^ES[0-9]{2}\s[0-9]{4}\s[0-9]{4}\s[0-9]{2}\s[0-9]{10}$/,
+    tarjetaCredito: /^[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}$/,
+    contrasenha: /^([a-zA-Z]|[0-9]|\W){12}$/
+} 
 
 // VALORES FINALES
 let valoresFinales = {};
