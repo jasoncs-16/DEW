@@ -36,7 +36,7 @@ input.valido {
 }
 
 input.invalido {
-    border-color: orange;
+    border-color: red;
 }
 
 input + p {
@@ -45,7 +45,7 @@ input + p {
     font-weight: bold;
     text-align: center;
     margin: 0 10px;
-    color: orange;
+    color: red;
     opacity: 0;
     height: 0;
 }
