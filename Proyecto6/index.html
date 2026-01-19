@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formUsuario">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+        <p>El nombre debe comenzar por mayúscula y contener solo letras, guiones o apóstrofes.</p>
+
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Apellido1 Apellido2">
+        <p>Introduce 2 apellidos, cada uno debe comenzar por mayúscula y no contener números.</p>
+
+        <label for="dni">DNI/NIE:</label><br>
+        <input type="text" id="dni" name="dni" placeholder="00000000A">
+        <p>Tiene que ser un dni válido.</p>
+
+        <label for="fecNac">Fecha de Nacimiento:</label><br>
+        <input type="text" id="fecNac" name="fecNac" placeholder="DD/MM/AAAA">
+        <p>Formato DD/MM/AAAA inválido o fecha no válida.</p>
+
+        <label for="codPostal">Código Postal:</label><br>
+        <input type="number" id="codPostal" name="codPostal" placeholder="00000">
+        <p>El código postal debe tener 5 dígitos</p>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" placeholder="name@example.com">
+        <p>Correo electrónico no válido</p>
+
+        <label for="telFijo">Teléfono Fijo:</label><br>
+        <input type="number" id="telFijo" name="telFijo" placeholder="123456789">
+        <p>Teléfono móvil no válido. Debe tener 9 dígitos.</p>
+
+        <label for="telMovil">Teléfono Móvil:</label><br>
+        <input type="number" id="telMovil" name="telMovil" placeholder="123456789">
+        <p>Tiene que ser un número de 9 cifras</p>
+
+        <label for="iban">IBAN:</label><br>
+        <input type="text" id="iban" name="iban" placeholder="ES1212341234121234567890">
+        <p>IBAN español inválido. Debe empezar por 'ES' seguido de 22 dígitos.</p>
+
+        <label for="tarjetaCredito">Tarjeta de Crédito:</label><br>
+        <input type="text" id="tarjetaCredito" name="tarjetaCredito" placeholder="1234123412341234">
+        <p>Número de tarjeta inválido.</p>
+
+        <label for="contrasenha">Contraseña:</label><br>
+        <input type="password" id="contrasenha" name="contrasenha" placeholder="Contraseña">
+        <p>La contraseña debe tener al menos 12 caracteres, incluir letras, números y al menos 1 carácter especial.</p>
+
+        <label for="repetirCon">Repetir Contraseña:</label><br>
+        <input type="password" id="repetirCon" name="repetirCon" placeholder="Repetir Contraseña">
+        <p>Las contraseñas no coinciden</p>
+
+        <div id="mensaje"></div>
+        
+        <div>
+            <button id="recuperar" name="recuperar">RECUPERAR</button>
+            <button id="guardar" name="guardar">GUARDAR</button>
+        </div>
+
+        <br>
+        
+        <div id="p6">
+            <button id="obtenerJson" name="obtenerJson">Obtener desde .json</button>
+            <button type="submit" id="publicarPhp" name="publicarPhp">Publicar en .php</button>
+            <button id="obtenerPhp" name="obtenerPhp">Obtener desde .php</button>
+            <button id="publicarBBDD" name="publicarBBDD">Publicar base de datos</button>
+            <button id="obtenerBBDD" name="obtenerBBDD">Obtener base de datos</button>
+        </div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>

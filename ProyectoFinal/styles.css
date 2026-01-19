@@ -1,0 +1,99 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin: 0px;
+}
+
+header {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    background-color: rgb(0, 76, 96); 
+    justify-content: space-around;
+    align-items: center; 
+
+}
+
+#logo {
+    cursor: pointer;
+}
+
+#logo img {
+    width: 100px;
+    height: 100px;
+}
+
+#navBar {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: auto;
+}
+
+#navBar p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: fit-content;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#navBar p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+    background-color: orange;
+}
+
+svg {
+    width: fit-content;
+    height: 40px;
+    padding: 10px;
+}
+
+svg:last-child {
+    margin-left: 20px;
+}
+
+svg:hover {
+    cursor: pointer;
+    color: black;
+    background-color: orange;
+    border-radius: 40px;
+}
+
+#carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: black;
+    width: auto;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 100px;
+}
+
+#informationSection {
+    color: black;
+    padding: 40px;
+    border-top: 2px gray solid;
+    text-align: center;
+}
+
+footer {
+    font-size: 20px;
+    background-color: rgb(0, 76, 96);
+    padding: 20px;
+    text-align: center;
+}
+
+footer span {
+    font-weight: bold;
+}
