@@ -59,6 +59,7 @@ function verificarFormulario() {
     return true;
 }
 
+// FUNCION VALIDAR DATOS
 function validarDatos() {
     // VALIDAR SI LOS INPUTS TIENEN DATOS Y SI ESTOS CUMPLEN CON LAS EXPRESIONES REGULARES
     Object.entries(validadores).forEach(([clave, valor]) => {

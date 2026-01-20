@@ -60,7 +60,7 @@ if ($accion === 'guardar') {
         $stmtCheck->execute([':dni' => $datos['dni']]);
         
         if ($stmtCheck->fetch()) {
-            // SI EXISTE SE ACTUALIZA
+            // SI EXISTE, SE ACTUALIZA
             $sql = "UPDATE usuario SET 
                     nombre = :nombre,
                     apellidos = :apellidos,

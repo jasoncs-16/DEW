@@ -78,6 +78,8 @@ button {
     font-size: 15px;
 }
 
+/* Estado del mensaje */
+
 .mensajeValido {
     color: green;
     margin: 20px;
