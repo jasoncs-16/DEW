@@ -1,6 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     color: white;
+    background-color: beige;
     margin: 0px;
 }
 
@@ -12,7 +13,6 @@ header {
     background-color: #003973; 
     justify-content: space-around;
     align-items: center; 
-
 }
 
 #logo {
