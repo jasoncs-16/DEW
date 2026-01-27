@@ -54,6 +54,11 @@ header {
     background-color: #FFF97A;
 }
 
+#navBar a {
+    color: white;
+    text-decoration: none;
+}
+
 #iconNavBar {
     display: flex;
     flex-direction: row;
@@ -127,16 +132,75 @@ svg:hover {
     display: block;
 }
 
-#informationSection {
+#productSection {
+    margin-top: 100px;
+}
+
+#productSection h1 {
+    color: black;
+    margin-left: 80px;
+}
+
+#productSection ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+#productSection li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 250px;
+    padding: 20px;
+}
+
+#productSection li:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgb(114, 114, 114);
+}
+
+#productSection img {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+}
+
+#productSection p {
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 220px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+#informationSection p {
     color: black;
     padding: 40px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
     background-color: #003973;
     padding: 20px;
+}
+
+footer section {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer p {
     text-align: center;
 }
 
