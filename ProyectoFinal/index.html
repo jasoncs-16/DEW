@@ -13,13 +13,13 @@
             <img src="imagen/logo.png">
         </div>
         <div id="navBar">
-            <a href="#carousel"><p>Inicio</p></a>
+            <a id="homeButton"><p>Inicio</p></a>
             <p>Productos</p>
-            <a href="#informationSection"><p>Acerca de</p></a>
+            <a id="aboutButton"><p>Acerca de</p></a>
         </div>
         <div id="iconNavBar">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" /></svg>
+            <svg id="shoppingCart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" /></svg>
             <div id="lang"><img src="imagen/idiomaLogos/spain.png" id="idiomaLogo"><p>ES</p></div>
         </div>
     </header>
@@ -27,31 +27,37 @@
         <section id="carousel">
             <div class="carousel-track">
                 <!-- Clon de la última -->
-                <div class="slide"><img src="imagen/utensilios_fondo.png" alt=""></div>
+                <div id="tabla1" class="slide"><img src="imagen/productos/tabla.png"><p>Tabla de cortar de cocina de roble de madera rectangular</p></div>
 
                 <!-- Slides reales -->
-                <div class="slide"><img src="imagen/carousel/airfryer_fondo.png" alt=""></div>
-                <div class="slide"><img src="imagen/carousel/batidora_fondo.png" alt=""></div>
-                <div class="slide"><img src="imagen/carousel/microondas_fondo.png" alt=""></div>
-                <div class="slide"><img src="imagen/carousel/sartenes_fondo.png" alt=""></div>
-                <div class="slide"><img src="imagen/carousel/utensilios_fondo.png" alt=""></div>
+                <div id="airfryer1" class="slide"><img src="imagen/productos/airfryer.png"><p>Freidora de aire WHITEEASYFRYER de 4L y 1200W blanca</p></div>
+                <div id="colador" class="slide"><img src="imagen/productos/colador.png"><p>Colador acero inox. 18/10 8cm</p></div>
+                <div id="cuchillo" class="slide"><img src="imagen/productos/cuchillo.png"><p>Arcos   Cuchillo Cocina de Acero Inoxidable y Hoja 200 mm. Cuchillo Chef para cortar carne, pescado, aves, frutas y verduras. Mango ergonómico polioximetileno. Serie Universal. Color negro.</p></div>
+                <div id="sarten" class="slide"><img src="imagen/productos/sarten.png"><p>Sartén de cerámica antiadherente, sartén para tortilla de 8 pulgadas, sartén de chef saludable no tóxica, compatible con inducción con mango resistente al calor, sin PFAS, color blanco</p></div>
+                <div id="tabla2" class="slide"><img src="imagen/productos/tabla.png"><p>Tabla de cortar de cocina de roble de madera rectangular</p></div>
 
                 <!-- Clon de la primera -->
-                <div class="slide"><img src="imagen/airfryer_fondo.png" alt=""></div>
+                <div id="airfryer2" class="slide"><img src="imagen/productos/airfryer.png"><p>Freidora de aire WHITEEASYFRYER de 4L y 1200W blanca</p></div>
             </div>
         </section>
-        <section id="productSection">
-            <h1>Productos de interés</h1>
-            <ul>
-                <li><img src="imagen/productos/airfryer.png"><p>Freidora de aire WHITEEASYFRYER de 4L y 1200W blanca</p></li>
-                <li><img src="imagen/productos/colador.png"><p>Colador acero inox. 18/10 8cm</p></li>
-                <li><img src="imagen/productos/cuchillo.png"><p>Arcos   Cuchillo Cocina de Acero Inoxidable y Hoja 200 mm. Cuchillo Chef para cortar carne, pescado, aves, frutas y verduras. Mango ergonómico polioximetileno. Serie Universal. Color negro.</p></li>
-                <li><img src="imagen/productos/sarten.png"><p>Sartén de cerámica antiadherente, sartén para tortilla de 8 pulgadas, sartén de chef saludable no tóxica, compatible con inducción con mango resistente al calor, sin PFAS, color blanco</p></li>
-                <li><img src="imagen/productos/tabla.png"><p>Tabla de cortar de cocina de roble de madera rectangular</p></li>
-            </ul>
-        </section>
         <section id="informationSection">
-            <p>En J's Shop podrás encontrar todo tipo de artículos de cocina y siempre que entres a la página, no te perderas de ninguna oferta o promoción que tendremos preparado para nuestros preciados clientes.</p>
+            <p id="companyInformation" hidden>J’Shop es tu tienda online de confianza especializada en utensilios de cocina prácticos, modernos y de alta calidad. Seleccionamos cuidadosamente cada producto para hacer que cocinar sea más fácil, rápido y agradable, tanto si eres un amante de la cocina como si buscas soluciones funcionales para el día a día. En nuestro catálogo encontrarás desde herramientas esenciales hasta accesorios innovadores que optimizan el espacio, ahorran tiempo y mejoran tu experiencia en la cocina. Apostamos por diseños resistentes, funcionales y actuales, pensados para adaptarse a cualquier estilo y necesidad. En J’Shop creemos que una buena cocina empieza con buenos utensilios. Por eso ofrecemos compras seguras, envíos rápidos y atención cercana, para que solo te preocupes de disfrutar cocinando.</p>
+            <p id="airfryerInformation" hidden>airfryerInformation</p>
+            <p id="coladorInformation" hidden>coladorInformation</p>
+            <p id="cuchilloInformation" hidden>cuchilloInformation</p>
+            <p id="sartenInformation" hidden>sartenInformation</p>
+            <p id="tablaInformation" hidden>tablaInformation</p>
+        </section>
+        <section id="shoppingCartSection" hidden>
+            <div id="styleShoppingCart">
+                <div>
+                <h2>Carrito</h2>
+                </div>
+                <div id="summary">
+                    <h2>Resumen</h2>
+                    <button id="buy">Comprar</button>
+                </div>
+            </div>
         </section>
     </main>
     <footer>    
