@@ -45,7 +45,7 @@ function reload() {
 logoButton.addEventListener("click", reload);
 homeButton.addEventListener("click", reload);
 
-// Pasar por cada etiqueta p
+// Pasar por cada etiqueta p de la seccion informationSection
 const informationSection = document.querySelectorAll("#informationSection p");
 
 // Si hay algun texto que ya se esta mostrado, esconderlo y mostrar el deseado
@@ -105,9 +105,34 @@ Object.entries(productsLi).forEach(([buttonId, textId]) => {
     });
 });
 
-// Evitar que se recargue la pagina
-const formUsuario = document.querySelector("#formUsuario").addEventListener("submit", function(e) {
-    e.preventDefault();
+// Botones para mostrar formulario de registro o login
+const showRegisterButton = document.getElementById("showRegister");
+const showLoginButton = document.getElementById("showLogin");
+const formRegister = document.getElementById("formRegister");
+const formLogin = document.getElementById("formLogin");
+const userButton = document.getElementById("userButton");
+const userSection = document.getElementById("userSection");
+
+showRegisterButton.addEventListener("click", function() {
+    formLogin.hidden = true;
+    formRegister.hidden = false;
+    showRegisterButton.classList.add("active");
+    showLoginButton.classList.remove("active");
+    
+    // Ocultar mensajes
+    document.getElementById("loginMessage").hidden = true;
+    document.getElementById("registerMessage").hidden = true;
+});
+
+showLoginButton.addEventListener("click", function() {
+    formRegister.hidden = true;
+    formLogin.hidden = false;
+    showLoginButton.classList.add("active");
+    showRegisterButton.classList.remove("active");
+    
+    // Ocultar mensajes
+    document.getElementById("loginMessage").hidden = true;
+    document.getElementById("registerMessage").hidden = true;
 });
 
 // Expresiones regulares para registrarse
@@ -120,43 +145,116 @@ const validators = {
     password: /^([a-zA-Z]|[0-9]|\W){12,}$/
 }
 
-function register() {
+// Funcion para validar los campos
+function validateRegister() {
+    let isValid = true;
     Object.entries(validators).forEach(([clave, valor]) => {
-        let input = document.querySelector("input[name='" + clave + "']");
+        let input = document.querySelector("#formRegister input[name='" + clave + "']");
         let values = input.value;
         if (!valor.test(values)) {
             input.className = "invalido";
+            isValid = false;
         } else {
             input.className = "valido";
         }
     });
+    return isValid;
 }
 
-function verifyForm() {
-    for (const clave of Object.keys(validadores)) {
-        let input = document.querySelector("input[name='" + clave + "']");
-        if (input.className == "invalido" || input.className == "") {
-            return false;
-        }
-    }
-    return true;
-}
-
+// Funcion para guardar el usuario
 function saveUser() {
-    register();
-
-    if (verifyForm()) {
+    const registerMessage = document.getElementById("registerMessage");
+    
+    if (validateRegister()) {
         const datosUsuario = {}
-        for (const clave of Object.keys(validadores)) {
-            let input = document.querySelector("input[name='" + clave + "']");
+        for (const clave of Object.keys(validators)) {
+            let input = document.querySelector("#formRegister input[name='" + clave + "']");
             datosUsuario[clave] = input.value;
         }
         sessionStorage.setItem("Usuario", JSON.stringify(datosUsuario));
+        
+        // Mostrar mensaje de éxito
+        registerMessage.textContent = "Usuario registrado exitosamente";
+        registerMessage.className = "valido";
+        registerMessage.hidden = false;
+        
+        formRegister.reset();
+        Object.values(formRegister.querySelectorAll("input")).forEach(input => {
+            input.className = "";
+        });
+        
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            registerMessage.hidden = true;
+        }, 3000);
+    } else {
+        // Mostrar mensaje de error
+        registerMessage.textContent = "Por favor, completa todos los campos correctamente";
+        registerMessage.className = "invalido";
+        registerMessage.hidden = false;
+        
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            registerMessage.hidden = true;
+        }, 3000);
     }
 }
 
-const registerButton = document.getElementById("userRegister");
-registerButton.addEventListener("click", saveUser)
+// Funcion para iniciar sesion
+function loginUser() {
+    const nameInput = document.querySelector("#formLogin input[name='name']");
+    const passwordInput = document.querySelector("#formLogin input[name='password']");
+    const loginMessage = document.getElementById("loginMessage");
+    
+    const storedUser = sessionStorage.getItem("Usuario");
+    
+    if (storedUser) {
+        const user = JSON.parse(storedUser);
+        if (user.name === nameInput.value && user.password === passwordInput.value) {
+            // Mostrar mensaje de éxito
+            loginMessage.textContent = "Inicio de sesión exitoso";
+            loginMessage.className = "valido";
+            loginMessage.hidden = false;
+            
+            formLogin.reset();
+            
+            // Ocultar el mensaje después de 3 segundos
+            setTimeout(() => {
+                loginMessage.hidden = true;
+            }, 3000);
+        } else {
+            // Mostrar mensaje de error
+            loginMessage.textContent = "Nombre o contraseña incorrectos";
+            loginMessage.className = "invalido";
+            loginMessage.hidden = false;
+            
+            // Ocultar el mensaje después de 3 segundos
+            setTimeout(() => {
+                loginMessage.hidden = true;
+            }, 3000);
+        }
+    } else {
+        // Mostrar mensaje de error
+        loginMessage.textContent = "No hay usuarios registrados";
+        loginMessage.className = "invalido";
+        loginMessage.hidden = false;
+        
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            loginMessage.hidden = true;
+        }, 3000);
+    }
+}
+
+formRegister.addEventListener("submit", function(e) {
+    e.preventDefault();
+    saveUser();
+});
+
+formLogin.addEventListener("submit", function(e) {
+    e.preventDefault();
+    loginUser();
+});
 
 // Mostrar el carrito
 const shoppingCart = document.getElementById("shoppingCart");
