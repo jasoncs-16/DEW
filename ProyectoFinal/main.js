@@ -145,7 +145,7 @@ const validators = {
     password: /^([a-zA-Z]|[0-9]|\W){12,}$/
 }
 
-// Funcion para validar los campos
+// Funcion para validar los campos del registro
 function validateRegister() {
     let isValid = true;
     Object.entries(validators).forEach(([clave, valor]) => {
