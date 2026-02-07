@@ -34,6 +34,8 @@ setInterval(() => {
     }
 }, DELAY);
 
+const userLogged = false;
+
 // Tanto el boton inicio como el logo reinician la pagina
 const logoButton = document.getElementById("logo");
 const homeButton = document.getElementById("homeButton");
@@ -89,7 +91,7 @@ productButton.addEventListener("click", function() {
     }
 });
 
-// Pasar por cada elemento del menu desplegable y mostrar la infomracion de cada uno
+// Pasar por cada elemento del menu desplegable y mostrar la informacion de cada uno
 const productsLi = {
     lista0: "airfryerInformation",
     lista1: "coladorInformation",
@@ -110,7 +112,6 @@ const showRegisterButton = document.getElementById("showRegister");
 const showLoginButton = document.getElementById("showLogin");
 const formRegister = document.getElementById("formRegister");
 const formLogin = document.getElementById("formLogin");
-const userButton = document.getElementById("userButton");
 const userSection = document.getElementById("userSection");
 
 showRegisterButton.addEventListener("click", function() {
@@ -140,7 +141,7 @@ const validators = {
     name: /^[A-Z][a-z]+$/,
     id: /^[0-9]+$/,
     email: /^[a-zA-Z]*[0-9]*@(gmail|hotmail)(.com|.es)$/,
-    bankAcc: /^[0-9]{16}$/,
+    bankAcc: /^ES[0-9]{22}$/,
     phoneNumber: /^[0-9]{9}$/,
     password: /^([a-zA-Z]|[0-9]|\W){12,}$/
 }
@@ -183,7 +184,7 @@ function saveUser() {
             input.className = "";
         });
         
-        // Ocultar el mensaje después de 3 segundos
+        // Ocultar el mensaje despues de 3 segundos
         setTimeout(() => {
             registerMessage.hidden = true;
         }, 3000);
@@ -193,7 +194,7 @@ function saveUser() {
         registerMessage.className = "invalido";
         registerMessage.hidden = false;
         
-        // Ocultar el mensaje después de 3 segundos
+        // Ocultar el mensaje despues de 3 segundos
         setTimeout(() => {
             registerMessage.hidden = true;
         }, 3000);
@@ -211,24 +212,26 @@ function loginUser() {
     if (storedUser) {
         const user = JSON.parse(storedUser);
         if (user.name === nameInput.value && user.password === passwordInput.value) {
-            // Mostrar mensaje de éxito
+            // Mostrar mensaje de exito
             loginMessage.textContent = "Inicio de sesión exitoso";
             loginMessage.className = "valido";
             loginMessage.hidden = false;
             
             formLogin.reset();
             
-            // Ocultar el mensaje después de 3 segundos
+            // Ocultar el mensaje despues de 3 segundos
             setTimeout(() => {
                 loginMessage.hidden = true;
             }, 3000);
+
+            userLogged = true; // El usuario ha iniciado sesion
         } else {
             // Mostrar mensaje de error
             loginMessage.textContent = "Nombre o contraseña incorrectos";
             loginMessage.className = "invalido";
             loginMessage.hidden = false;
             
-            // Ocultar el mensaje después de 3 segundos
+            // Ocultar el mensaje despues de 3 segundos
             setTimeout(() => {
                 loginMessage.hidden = true;
             }, 3000);
@@ -239,7 +242,7 @@ function loginUser() {
         loginMessage.className = "invalido";
         loginMessage.hidden = false;
         
-        // Ocultar el mensaje después de 3 segundos
+        // Ocultar el mensaje despues de 3 segundos
         setTimeout(() => {
             loginMessage.hidden = true;
         }, 3000);
@@ -256,6 +259,15 @@ formLogin.addEventListener("submit", function(e) {
     loginUser();
 });
 
+const userButton = document.getElementById("userButton");
+userButton.addEventListener("click", function() {
+    if (userSection.hidden == false) { // Apunta directamente al carrito para mostrarlo o no
+        userSection.hidden = true
+    } else {
+        userSection.hidden = false
+    }
+})
+
 // Mostrar el carrito
 const shoppingCart = document.getElementById("shoppingCart");
 const shoppingCartSection = document.getElementById("shoppingCartSection");
@@ -265,6 +277,21 @@ shoppingCart.addEventListener("click", function() {
     } else {
         shoppingCartSection.hidden = false
     }
+});
+
+// Añadir productos al carrito
+const shoppingCartContent = document.getElementById("shoppingCartContent");
+
+function addProduct(productValue) {
+    // Pending
+}
+
+const newProduct = document.querySelectorAll(".addProduct");
+newProduct.forEach(product => {
+    product.addEventListener("click", (productValue) => {
+        const values = productValue.target.value;
+        addProduct(values);
+    })  
 });
 
 const langButton = document.getElementById("langButton");

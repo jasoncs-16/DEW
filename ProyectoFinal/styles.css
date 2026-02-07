@@ -119,7 +119,7 @@ svg:hover {
     display: none;
     position: absolute;
     top: 85px;
-    margin-left: 60px;
+    margin-left: 85px;
 }
 
 #lang li {
@@ -194,6 +194,52 @@ svg:hover {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+}
+
+#productList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+#productList div {
+    border: 1px solid black;
+    border-radius: 18px;
+    padding: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+}
+
+#productList p {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#productList img {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#productList button {
+    background-color: #003973;
+    color: white;
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 18px;
+}
+
+#productList button:hover {
+    cursor: pointer;
+    background-color: #FFF97A;
+    color: black;
 }
 
 #styleShoppingCart {
